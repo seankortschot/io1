@@ -635,6 +635,7 @@ menuCount = 0;
 				screenHeight_array.push(sHeight);
 				viewPercent_array.push(percent);
 			log();
+			adapt();
 		}), 200);
 		}
 	}
@@ -646,7 +647,7 @@ menuCount = 0;
 		overload=0;
 		mc_array1 = [];
 		mc_array2 = [];
-		setTimeout(function(){
+
 
 			document.onmousemove = function(e){
 				cursorX = e.pageX;
@@ -685,10 +686,10 @@ menuCount = 0;
 				}
 				node_radius_array.shift();
 			}else{
-				if (node_radius_array[0]<1900){
+				if (node_radius_array[0]<1500){
 					cur_radius = node_radius_array[0]+100;
 				}else{
-					cur_radius = 1900;
+					cur_radius = 1625;
 				}
 				node_radius_array.push(cur_radius);
 				node_radius_array.shift();
@@ -718,10 +719,7 @@ menuCount = 0;
 					nodes[i].addClass('activeNode').removeClass('downNode');
 				}
 			};
-
-			adapt();
 			update_node_labels();
-		}, 200);
 	};
 
 	function update_node_labels(){
